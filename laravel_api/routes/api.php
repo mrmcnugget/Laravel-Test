@@ -16,15 +16,7 @@ use App\Http\controllers\ProductController;
 */
 Route::get('/products', [ProductController::class, "index"]);
 
-Route::post('/products', function()
-{
-    return product::create([
-        name => 'product1',
-        desc =>'its a product',
-        price => 15,
-
-    ]);
-});
+Route::post('/products', [ProductController::class, "store"]);
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();

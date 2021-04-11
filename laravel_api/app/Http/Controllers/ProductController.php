@@ -12,4 +12,12 @@ class ProductController extends Controller
         return Product::all();
         
     }
+    public function store(Request $request)
+    {
+        return product::create($request->all());
+    }
+    public function show ($id)
+    {
+        
+    }
 }
